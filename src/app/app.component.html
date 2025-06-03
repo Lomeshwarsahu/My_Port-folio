@@ -1,0 +1,581 @@
+
+
+<nav class="navbar navbar-expand-lg theme-navbar">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <!-- <p class="navbar-brand text-bold fw-bold" style="color: #f8f9fa">Lomeshwar Sahu</p>style="width: 15%;" -->
+     <div class="text-center justify-content-center icondiv" >
+      <p class="navbar-brand text-bold fw-bold">
+        <img src="./assets/img/logo1.png" class="img-fluid item-img img_size"  style="background-color: #480878; border: solid #f8f9fa; border-radius: 30px;" >
+      </p>
+     </div>
+ 
+     <div class="d-flex">
+      <input type="button" class="color-input border rounded-circle me-2" [style.background]="gradients[0]"
+        (click)="setTheme(gradients[0])">
+      <input type="button" class="color-input border rounded-circle me-2" [style.background]="gradients[1]"
+        (click)="setTheme(gradients[1])">
+      <input type="button" class="color-input border rounded-circle me-2" [style.background]="gradients[2]"
+        (click)="setTheme(gradients[2])">
+      <input type="button" class="color-input border rounded-circle " [style.background]="gradients[3]"
+        (click)="setTheme(gradients[3])">
+    </div>
+    
+    <!-- Toggle Button (For Mobile View) -->
+    <!-- <button class="navbar-toggler ms-auto pr-2 bg-white" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <button class="navbar-toggler ms-auto pr-2 bg-white" type="button" (click)="openOffcanvas()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+    <!-- Normal Navbar (For Large Screens) -->
+    <div class="collapse navbar-collapse d-none d-flex justify-content-center" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="home" (click)="setActive('home')"
+            [ngClass]="{'active': activeMenu === 'home'}"> Home </a>
+
+
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="about" (click)="setActive('about')"
+            [ngClass]="{'active': activeMenu === 'about'}">
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="skills" (click)="setActive('skills')"
+            [ngClass]="{'active': activeMenu === 'skills'}">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="projects" (click)="setActive('projects')"
+            [ngClass]="{'active': activeMenu === 'projects'}">
+            Projects
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="experience" (click)="setActive('experience')"
+            [ngClass]="{'active': activeMenu === 'experience'}"> Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="education" (click)="setActive('education')"
+            [ngClass]="{'active': activeMenu === 'education'}"> Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="Resume" (click)="setActive('Resume')"
+            [ngClass]="{'active': activeMenu === 'Resume'}">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" fragment="contact" (click)="setActive('contact')"
+            [ngClass]="{'active': activeMenu === 'contact'}">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Offcanvas Sidebar (For Mobile View) -->
+    <div class="offcanvas offcanvas-start border rounded " #offcanvasNavbar
+      [ngClass]="{'text-bg-dark': isDarkMode, 'text-bg-light': !isDarkMode}" tabindex="-1" id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header bg-white">
+        <h5 class="offcanvas-title text-dark" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close text-dark"  data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body  theme-navbar ">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('home')" 
+            routerLinkActive="active" [ngClass]="{'active': activeMenu === 'home'}">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('about')"
+              routerLinkActive="active"   [ngClass]="{'active': activeMenu === 'about'}">About</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('projects')"
+              routerLinkActive="active"   [ngClass]="{'active': activeMenu === 'projects'}">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('skills')"
+              routerLinkActive="active"[ngClass]="{'active': activeMenu === 'skills'}">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('experience')"
+              routerLinkActive="active"[ngClass]="{'active': activeMenu === 'experience'}">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('education')"
+              routerLinkActive="active"[ngClass]="{'active': activeMenu === 'education'}">Education</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('Resume')"
+              routerLinkActive="active"[ngClass]="{'active': activeMenu === 'Resume'}">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navigateAndClose('contact')"
+              routerLinkActive="active"[ngClass]="{'active': activeMenu === 'contact'}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- (click)="navigateAndClose('home')" style="background-color: #875ca4;"-->
+<div class="card shadow mb-4" >
+  <div class="card body color transition-all hover-shadow-lg">
+    <div>
+
+      
+      <section id="welcome-section" class="card border rounded" style="position: relative; overflow: hidden;">
+
+        <div style="background: url('assets/img/Welcome.png') center/cover no-repeat; position: absolute; width: 100%; height: 100%; z-index: 0;"></div>
+      
+        <div style="background-color: rgba(0, 0, 0, 0.5); position: absolute; width: 100%; height: 100%; z-index: 1;"></div>
+      
+        <div id="home" class="d-flex flex-column align-items-center justify-content-center text-center text-white border rounded" style="height: 100vh; position: relative; z-index: 2;">
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <h1  class="text_font">Welcome to My Portfolio</h1>
+            <p class="text_font">Hi, I'm Lomeshwar Sahu, a passionate programmer who loves building amazing web applications.</p>
+            <a class="btn btn-lightt theme-btn text_font" (click)="navigateAndClose('about')">Learn More</a>
+          </div>
+        </div>
+      
+      </section>
+      
+      <!-- <section id="welcome-section" class="card border rounded" style="position: relative; overflow: hidden;">
+
+        <div style="background: url('assets/img/Welcome.png') center/cover no-repeat; position: absolute; width: 100%; height: 100%; opacity: 0.3;"></div>
+      
+        <div id="home" class="d-flex flex-column align-items-center justify-content-center text-center text-white border rounded" style="height: 100vh; position: relative; z-index: 1;">
+          
+          <div data-aos="fade-up">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Lomeshwar Sahu, a passionate programmer who loves building amazing web applications.</p>
+            <a class="btn btn-light" (click)="navigateAndClose('about')">Learn More</a>
+          </div>
+      
+        </div>
+      
+      </section> -->
+      
+    <!-- <section id="welcome-section" class="card border rounded" >
+        <div id="home" class="d-flex flex-column align-items-center justify-content-center text-center text-white border rounded" style="height: 100vh;">
+          
+          <img src="\assets\img\Welcome.png" alt="Welcome" class="img-fluid mb-4" style="max-width: 300px;"> 
+          
+          <div data-aos="fade-up">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Lomeshwar Sahu, a passionate programmer who loves building amazing web applications.</p>
+            <a class="btn btn-light" (click)="navigateAndClose('about')">Learn More</a>
+          </div>
+      
+        </div>
+      </section> -->
+      
+
+      <!-- <section id="welcome-section" class="card border rounded" >
+
+        <div id="home" class="d-flex align-items-center justify-content-center text-center text-white border rounded"
+          style="height: 100vh;">
+          <div data-aos="fade-up">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Lomeshwar Sahu, a passionate programmer who loves building amazing web applications.</p>
+            <a class="btn btn-light" (click)="navigateAndClose('about')"
+              >Learn More</a>
+         </div>
+        </div>
+      </section>  -->
+      
+      <div class="card rounded m-2  transition-all hover-shadow-lg text-dark" style="color: #f8f9fa">
+        <section id="about" class="container py-5">
+          <div class="row align-items-center">
+        
+            <!-- Left Image -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
+              <div class="text-center" style="max-width: 300px; margin: auto;">
+                <img src="assets/img/photo_2025-03-04_13-27-30.jpg" alt="Profile Image"
+                  class="img-fluid rounded-circle border w-100" style="object-fit: cover; aspect-ratio: 1/1;">
+              </div>
+            </div>
+        
+            <!-- Right Text -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
+              <h2 class="text_font">About Me</h2>
+              <p class="text_font">I am a software developer with expertise in Angular, Bootstrap, and other modern web technologies. I
+                love solving problems and creating efficient solutions.</p>
+              <p class="text_font">I specialize in frontend and backend development, with a strong focus on user experience, responsive
+                design, and performance optimization.</p>
+              <p class="text_font">My interests include exploring new technologies, contributing to open-source projects, and sharing
+                knowledge through blogging and mentorship.</p>
+              <p class="text_font">When I'm not coding, I enjoy reading tech blogs, watching movies, and working on personal projects to
+                enhance my skills.</p>
+            </div>
+        
+          </div>
+        </section>
+        
+        <!-- <section id="about" class="container py-5">
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="text-center" style="max-width: 300px; margin: auto;">
+
+                <img src="assets/img/photo_2025-03-04_13-27-30.jpg" alt="Profile Image"
+                  class="img-fluid rounded-circle border w-100" style="object-fit: cover; aspect-ratio: 1/1;">
+              </div>
+
+
+              <img  class="w-100 border rounded-circle " src="assets/img/photo_2025-03-04_13-27-30.jpg" alt="Profile Image" >
+              <img src="assets/img/photo_2025-03-04_13-27-30.jpg" alt="Profile Image" class="img-fluid rounded">
+
+              <img src="src\assets\img\img1.jpg" alt="Profile Image" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+              <h2>About Me</h2>
+              <p>I am a software developer with expertise in Angular, Bootstrap, and other modern web technologies. I
+                love solving problems and creating efficient solutions.</p>
+              <p>I specialize in frontend and backend development, with a strong focus on user experience, responsive
+                design, and performance optimization.</p>
+              <p>My interests include exploring new technologies, contributing to open-source projects, and sharing
+                knowledge through blogging and mentorship.</p>
+              <p>When I'm not coding, I enjoy reading tech blogs, watching movies, and working on personal projects to
+                enhance my skills.</p>
+            </div>
+          </div>
+        </section> -->
+        <section class="container" >
+          <h2 class="text-left mb-4 pr-4">My Journey</h2>
+          <div class="row justify-content-left">
+            <div class="col-md-10">
+              <p class="fs-5 text_font" data-aos="fade-up" data-aos-duration="1000">
+                My journey into the world of front-end development began with a college project — an online service for
+                paddy management and billing at Mandis. I explored the right tools and technologies to bring this idea
+                to life and successfully implemented it.
+              </p>
+              <p class="fs-5 text_font" data-aos="fade-up" data-aos-duration="1000">
+                Since then, I have been fortunate to work on a variety of projects, each presenting unique challenges
+                and opportunities for innovation. These experiences have taught me the value of staying up-to-date with
+                the latest technologies and design trends to ensure that I can deliver cutting-edge solutions to my
+                clients.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="card rounded m-2 bg-white">
+        <section id="skills" class=" py-5">
+          <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-center">Skills</h2>
+            <!-- <div class="col-lg-12 col-md-12 ">
+            <div class="card bg-light card-hover shadow"> -->
+            <div class="row text-left mt-4">
+              <div class="col-md-4">
+                <h4 >Programming Languages</h4>
+                <p class="text_font">JavaScript, TypeScript, C++, Java, C</p>
+              </div>
+              <div class="col-md-3">
+                <h4>Frameworks & Libraries</h4>
+                <p class="text_font">Angular, Bootstrap, .Net, Node.js, Express.js</p>
+              </div>
+              <div class="col-md-3">
+                <h4>Tools & Technologies</h4>
+                <p class="text_font">Git, GitHub, Firebase, SQL Server, MongoDB</p>
+              </div>
+              <div class="col-md-2">
+                <h4>Other Tools</h4>
+                <p class="text_font">Capacitor,Android Studio</p>
+              </div>
+            </div>
+          </div>
+          <!-- </div>
+      </div> -->
+        </section>
+      </div>
+      <div class="card rounded m-2 bg-white">
+        <section id="projects" class="container py-5 " data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="text-center">Projects</h2>
+          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row  m-4">
+                  <div class="col-lg-4 col-md-12 ">
+                    <div class="card rounded border-0 card-hover shadow-lg bg-white text-dark" style="color: #f8f9fa">
+                      <img src="assets/img/logo.png" class="card-img-top img-fluid w-100 rounded-circle border mt-2"
+                        style="max-width: 150px; margin: auto;" alt="Project 1">
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Seva Gudi</h5>
+                        <p class="card-text text_font">
+                          Service Provider system to find and book nearby services, built with Angular & Capacitor,
+                          using REST API and SQL Server for data management.
+                          <br>
+                        </p>
+                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover ">
+                      <img src="assets\img\logo 512.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 130px; margin: auto;" alt="Project 2">
+          
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">KOT(Kitchen Order Ticket)</h5>
+                        <p class="card-text text_font">Restaurant Management System – A system where waiters can take orders
+                          and submit them to the kitchen, developed using AngularJS with Capacitor, and data managed via
+                          API using SQL Server.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                      <img src="assets\img\icon 512.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 100px; margin: auto;" alt="Project 3">
+          
+                      <!-- <img src="https://via.placeholder.com/400" class="card-img-top" alt="Project 3"> -->
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Paddy Management </h5>
+                        <p class="card-text text_font">Paddy Sale and Purchase System – Facilitates the sale and purchase of paddy
+                          with report generation for accurate measurement and detailed information. Implemented using
+                          the .NET Framework and MS Access database.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+              </div>
+          
+              <div class="carousel-item">
+                <div class="row m-4">
+                  <div class="col-lg-4 col-md-12">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                      <img src="assets\img\landing3.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 200px; margin: auto;" alt="Project 4">
+          
+                      <!-- <img src="assets\img\landing3.png" class="card-img-top" alt="Project 4"> -->
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Insta Messanger</h5>
+                        <p class="card-text text_font">Sale and Purchase of Paddy system with report generation that ensures
+                          accurate measurement and detailed information. Developed using .NET Framework with MS Access
+                          database.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                      <!-- <img src="https://via.placeholder.com/400" class="card-img-top" alt="Project 5"> -->
+                      <img src="assets\img\icons 521.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 150px; margin: auto;" alt="Project 5">
+          
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Product Tracking System </h5>
+                        <p class="card-text text_font">Product tracking using QR scanning and Google Maps integration in AGM. A
+                          hybrid app supporting Android, iOS, and Web platforms. REST APIs handled using the Core HTTP
+                          package.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                      <!-- <img src="assets\img\icon-96x96.png" class="card-img-top" alt="Project 6"> -->
+                      <img src="assets\img\icon-72x72.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 150px; margin: auto;" alt="Project 6">
+          
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Chhattisgarh Aushdhi Darpan</h5>
+                        <p class="card-text text_font">
+                          A government dashboard project showcasing detailed reports on Drugs, Equipment, and
+                          Infrastructure, streamlining operations and enhancing efficiency.
+                        </p> <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </section>
+      </div>
+      <div class="card rounded m-2 bg-white ">
+
+        <section id="experience" class="container py-5">
+          <h2 class="text-center mb-4 ">Experience</h2>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card shadow-lg border-0 card-hover bg-white mb-3 text-dark" style="color: #f8f9fa" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card-body">
+                  <h5 class="card-title gradient-heading">Internship: Shivam info soft PVT.</h5>
+                  <h6 class="text-muted">Duration: Mar 2022 - sep 2022</h6>
+                  <p class="card-text text_font">
+                    As an intern, I worked on Angular web and mobile app projects, contributing to front-end development
+                    and maintaining legacy systems. My performance led to a formal job offer from the company.</p>
+                </div>
+              </div>
+
+              <div class="card shadow-lg border-0 card-hover bg-white mb-3" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card-body">
+                  <h5 class="card-title gradient-heading">Front-end Developer - Shivam info soft PVT.</h5>
+                  <h6 class="text-muted text_font">Duration: Sep 2022 – Sep 2023</h6>
+                  <p class="card-text text_font">1. Implemented features for various applications using Angular 14 and SQL
+                    Server.<br>
+
+                    2. Collaborated with quality engineers, product managers, and support teams to ensure high software
+                    quality during development.</p>
+                </div>
+              </div>
+
+              <div class="card shadow-lg border-0 card-hover bg-white mb-3" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card-body">
+                  <h5 class="card-title gradient-heading">Programmer - CGMSC </h5>
+                  <h6 class="text-muted">Duration: Jan 2025 - Present</h6>
+                  <p class="card-text">Created multiple websites and web apps for clients using modern web technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="card  rounded m-2 bg-white ">
+
+        <section id="education" class="container py-5">
+          <h2 class="text-center mb-4 ">Education</h2>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card shadow-lg border-0 card-hover bg-white mb-3" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card-body">
+                  <h5 class="card-title gradient-heading">Master of Computer Applications (MCA)</h5>
+                  <h6 class="text-muted text_font">Pt.Ravishankar Shukla University, Raipur:- MAY-JUN - 2022</h6>
+                  <p class="card-text text_font">During my MCA, I focused on mastering different programming languages ​​and
+                    enhancing my logical thinking through hands-on project work. This practical exposure helped me gain
+                    a
+                    deeper understanding of software development and problem-solving techniques. With a 76% score,
+                    I have built strong technical skills and a solid academic background.</p>
+                </div>
+              </div>
+              <div class="card shadow-lg border-0 card-hover bg-white mb-3" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card-body">
+                  <h5 class="card-title gradient-heading">Bachelor of Computer Computer Applications (BCA)</h5>
+
+                  <h6 class="text-muted text_font">Netaji Subhash Mahavidyalaya belbhatha abhanpur Raipur:- MAR - APR - 2019</h6>
+                  <p class="card-text text_font">Throughout my BCA, I gained knowledge in different programming languages and
+                    developed
+                    logical thinking by building real-time projects. These experiences helped me understand the
+                    practical side
+                    of development and improved my problem-solving skills. Scoring 65%, I have built a solid foundation
+                    for a
+                    successful career in software development.</p>
+                </div>
+              </div>
+              <div class="card shadow-lg border-0 card-hover bg-white mb-3" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card-body">
+                  <h5 class="card-title gradient-heading">Higher secondary school Certificate examination(12 th) </h5>
+                  <h6 class="text-muted text_font">CG Board of secondary education,Raipur:- Feb-Mar, 2015 </h6>
+                  <p class="card-text text_font">Despite scoring 55% in Biology, I gained a solid understanding of the subject and
+                    developed
+                    analytical thinking through practical and theoretical learning. This foundation helped me adapt to
+                    problem-solving tasks,
+                    and over time, I discovered my passion for technology, which led me to pursue a career in
+                    development.</p>
+                  <!-- <p class="card-text">Studied software development, data structures, algorithms, and web technologies.</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <div class="card rounded m-2 bg-white ">
+        <section id="contact" class="container py-5">
+          <h2 class="text-center mb-5">Get in Touch with Me</h2>
+          <div class="row justify-content-center g-4">
+
+            <!-- Email Card -->
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card text-center shadow-lg  card-hover h-100 border-0">
+                <div class="card-body" >
+                  <div class="text-primary mb-3 " style="font-size: 2.5rem;">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h5 class="card-title gradient-heading">Email</h5>
+                  <p class="card-text">
+                    <a href="mailto:lomeshwarsahu1996@gmail.com">lomeshwarsahu1996&#64;gmail.com</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card text-center shadow-lg   card-hover h-100 border-0">
+                <div class="card-body">
+                  <div class="text-success mb-3" style="font-size: 2.5rem;">
+                    <i class="fas fa-phone-alt" style="transform: rotate(100deg);"></i>
+
+                  </div>
+                  <h5 class="card-title gradient-heading">Phone</h5>
+                  <p class="card-text">
+                    <a href="tel:+919340414187">+91 9340414187</a> <br>
+                    <a href="tel:+918719082655">+91 8719082655</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card text-center shadow-lg  card-hover h-100 border-0">
+                <div class="card-body">
+                  <div class="text-info mb-3" style="font-size: 2.5rem;">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <h5 class="card-title gradient-heading">LinkedIn</h5>
+                  <p class="card-text">
+                    <a href="http://surl.li/kxpct" target="_blank">linkedin.http://surl.li/kxpct</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- GitHub Card -->
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card text-center shadow-lg  card-hover h-100 border-0">
+                <div class="card-body">
+                  <div class="text-dark mb-3" style="font-size: 2.5rem;">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <h5 class="card-title gradient-heading">GitHub</h5>
+                  <p class="card-text">
+                    <a href="https://github.com/Lomeshwarsahu" target="_blank">https://github.com/Lomeshwarsahu</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- <button (click)="scrollToSection('home')" class="scroll-top-btn mb-4">
+  <i class="fas fa-arrow-up"></i>
+</button> -->
+
+    </div>
+
+  </div>
+
+</div>
+<button (click)="scrollToTop()" class="scroll-top-btn mb-4 theme-navbar">
+  <i class="fas fa-arrow-up"></i>
+</button>
+<div class="pt-2">
+  <footer class=" text-white text-center fixed-bottom theme-navbar" style="background-color: #747275">
+    <div class="container p-2">
+      <p class="mb-0">&copy; 2024 My Portfolio. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<router-outlet></router-outlet>
