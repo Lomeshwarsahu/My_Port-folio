@@ -9,8 +9,9 @@
 
   
 :root {
-  /* --theme-gradient: linear-gradient(180deg, #FF6000 -4%, #FFA559 100%); */
-  --theme-gradient: linear-gradient(1deg, rgb(18, 166, 210) 15%, rgb(49, 65, 252) 100%);
+  /* --theme-gradient: linear-gradient(180deg, #FF6000 -4%, #FFA559 100%);
+  --theme-gradient: linear-gradient(1deg, rgb(18, 166, 210) 15%, rgb(49, 65, 252) 100%); */
+  --theme-gradient: linear-gradient(180deg,rgb(182, 35, 162) 11%,rgb(228, 156, 247) 100%);
   
 }
 

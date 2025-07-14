@@ -10,7 +10,7 @@
       </p>
      </div>
  
-     <div class="d-flex">
+     <!-- <div class="d-flex">
       <input type="button" class="color-input border rounded-circle me-2" [style.background]="gradients[0]"
         (click)="setTheme(gradients[0])">
       <input type="button" class="color-input border rounded-circle me-2" [style.background]="gradients[1]"
@@ -19,7 +19,7 @@
         (click)="setTheme(gradients[2])">
       <input type="button" class="color-input border rounded-circle " [style.background]="gradients[3]"
         (click)="setTheme(gradients[3])">
-    </div>
+    </div> -->
     
     <!-- Toggle Button (For Mobile View) -->
     <!-- <button class="navbar-toggler ms-auto pr-2 bg-white" type="button" data-bs-toggle="offcanvas"
@@ -282,112 +282,33 @@
       </div> -->
         </section>
       </div>
+
+
       <div class="card rounded m-2 bg-white">
-        <section id="projects" class="container py-5 " data-aos="fade-up" data-aos-duration="1000">
+        <section id="projects" class="container py-5" data-aos="fade-up" data-aos-duration="1000">
           <h2 class="text-center">Projects</h2>
+      
           <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row  m-4">
-                  <div class="col-lg-4 col-md-12 ">
-                    <div class="card rounded border-0 card-hover shadow-lg bg-white text-dark" style="color: #f8f9fa">
-                      <img src="assets/img/logo.png" class="card-img-top img-fluid w-100 rounded-circle border mt-2"
-                        style="max-width: 150px; margin: auto;" alt="Project 1">
-                      <div class="card-body">
-                        <h5 class="card-title gradient-heading">Seva Gudi</h5>
-                        <p class="card-text text_font">
-                          Service Provider system to find and book nearby services, built with Angular & Capacitor,
-                          using REST API and SQL Server for data management.
-                          <br>
-                        </p>
-                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 d-none d-lg-block">
-                    <div class="card bg-white shadow-lg border-0 card-hover ">
-                      <img src="assets\img\logo 512.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
-                        style="max-width: 130px; margin: auto;" alt="Project 2">
-          
-                      <div class="card-body">
-                        <h5 class="card-title gradient-heading">KOT(Kitchen Order Ticket)</h5>
-                        <p class="card-text text_font">Restaurant Management System – A system where waiters can take orders
-                          and submit them to the kitchen, developed using AngularJS with Capacitor, and data managed via
-                          API using SQL Server.</p>
-                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 d-none d-lg-block">
-                    <div class="card bg-white shadow-lg border-0 card-hover">
-                      <img src="assets\img\icon 512.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
-                        style="max-width: 100px; margin: auto;" alt="Project 3">
-          
-                      <!-- <img src="https://via.placeholder.com/400" class="card-img-top" alt="Project 3"> -->
-                      <div class="card-body">
-                        <h5 class="card-title gradient-heading">Paddy Management </h5>
-                        <p class="card-text text_font">Paddy Sale and Purchase System – Facilitates the sale and purchase of paddy
-                          with report generation for accurate measurement and detailed information. Implemented using
-                          the .NET Framework and MS Access database.</p>
-                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
-                      </div>
-                    </div>
-                  </div>
-          
-                </div>
-              </div>
-          
-              <div class="carousel-item">
-                <div class="row m-4">
-                  <div class="col-lg-4 col-md-12">
-                    <div class="card bg-white shadow-lg border-0 card-hover">
-                      <img src="assets\img\landing3.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
-                        style="max-width: 200px; margin: auto;" alt="Project 4">
-          
-                      <!-- <img src="assets\img\landing3.png" class="card-img-top" alt="Project 4"> -->
-                      <div class="card-body">
-                        <h5 class="card-title gradient-heading">Insta Messanger</h5>
-                        <p class="card-text text_font">Sale and Purchase of Paddy system with report generation that ensures
-                          accurate measurement and detailed information. Developed using .NET Framework with MS Access
-                          database.</p>
-                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 d-none d-lg-block">
-                    <div class="card bg-white shadow-lg border-0 card-hover">
-                      <!-- <img src="https://via.placeholder.com/400" class="card-img-top" alt="Project 5"> -->
-                      <img src="assets\img\icons 521.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
-                        style="max-width: 150px; margin: auto;" alt="Project 5">
-          
-                      <div class="card-body">
-                        <h5 class="card-title gradient-heading">Product Tracking System </h5>
-                        <p class="card-text text_font">Product tracking using QR scanning and Google Maps integration in AGM. A
-                          hybrid app supporting Android, iOS, and Web platforms. REST APIs handled using the Core HTTP
-                          package.</p>
-                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 d-none d-lg-block">
-                    <div class="card bg-white shadow-lg border-0 card-hover">
-                      <!-- <img src="assets\img\icon-96x96.png" class="card-img-top" alt="Project 6"> -->
-                      <img src="assets\img\icon-72x72.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
-                        style="max-width: 150px; margin: auto;" alt="Project 6">
-          
-                      <div class="card-body">
-                        <h5 class="card-title gradient-heading">Chhattisgarh Aushdhi Darpan</h5>
-                        <p class="card-text text_font">
-                          A government dashboard project showcasing detailed reports on Drugs, Equipment, and
-                          Infrastructure, streamlining operations and enhancing efficiency.
-                        </p> <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+              <div class="carousel-item" *ngFor="let group of groupedproject; let i = index" [class.active]="i === 0">
+                <div class="row m-4 justify-content-center">
+                  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of group">
+                    <div class="card border-0 shadow h-100 text-dark">
+                      <img [src]="item.image" class="card-img-top rounded-circle mt-3 mx-auto d-block"
+                           style="max-width: 150px;" alt="{{ item.title }}">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <!-- Optional Button -->
+                        <!-- <a href="#" class="btn btn-primary">View</a> -->
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          
+      
+            <!-- Carousel Controls -->
             <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </button>
@@ -397,6 +318,38 @@
           </div>
         </section>
       </div>
+      
+
+      <!-- <div class="card rounded m-2 bg-white">
+        <section id="projects" class="container py-5 " data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="text-center">Projects</h2>
+          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let group of groupedproject; let i = index" [class.active]="i === 0">
+                <div class="row  m-4">
+                  <div class="col-lg-4 col-md-12 " *ngFor="let item of group ">
+                    <div class="card rounded border-0 card-hover shadow-lg bg-white text-dark" style="color: #f8f9fa">
+                      <img src="{{item.image}}" class="card-img-top img-fluid w-100 rounded-circle border mt-2"
+                        style="max-width: 150px; margin: auto;" alt="Project 1">
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">{{ item.title }}</h5>
+                        <p class="card-text text_font">{{ item.description }} </p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </section>
+      </div> -->
       <div class="card rounded m-2 bg-white ">
 
         <section id="experience" class="container py-5">
@@ -555,9 +508,63 @@
             </div>
 
           </div>
+          <!-- fgsdgs -->
+          <!-- <div class="container-fluid py-3">
+            <div class="row pt-3 p-2">
+                <div class="col-lg-12 mb-5">
+                    <div class="card shadow-lg p-4 border-0 bg-white rounded ">
+                        <div class="card-body border rounded px-0 pt-2 pb-3 bg-light"
+                            style="height: auto; overflow: hidden; position: relative;">
+
+                            <div class="mb-3 Fon-family" style="text-align: justify;">
+                                <form class="p-2" >
+                                    <div class="row pb-3">
+                                      <div class="form-group col-md-6">
+                                        <label for="inputName">First Name</label>
+                                        <input type="text" class="form-control" placeholder="Type your First Name" id="inputName">
+                                      </div>
+                                      <div class="form-group  col-md-6">
+                                        <label for="inputPassword4">Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Type your Last Name" id="inputPassword4">
+                                      </div>
+                                    </div>
+                                    <div class="row pb-3">
+                                      <div class="form-group  col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" placeholder="Type your Email" id="inputEmail4">
+                                      </div>
+                                     
+                                    </div>
+                                    <div class="row pb-3">
+                                      <div class="form-group  col-md-6">
+                                        <label for="inputnumber">Mobile Number </label>
+                                        <input type="number" class="form-control" placeholder="Type your Mobile Number" id="inputnumber">
+                                      </div>
+                                      <div class="form-group  col-md-6">
+                                        <label for="inputAddress">City</label>
+                                        <input type="text" class="form-control" placeholder="Type your City" id="inputAddress">
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-3">
+                                        <label for="inputComments">Subject</label>
+                                        <textarea class="form-control" id="inputComments" rows="4" placeholder="Type your comments or queries here..."></textarea>
+                                    </div>
+                                  
+                                    <button type="submit" class="btn btn-primary">Submit </button>
+                                  </form>
+                                
+                        </div>
+                        </div>
+
+                      
+                    </div>
+                    
+                </div>
+            </div>
+        </div> -->
         </section>
       </div>
-
+   
       <!-- <button (click)="scrollToSection('home')" class="scroll-top-btn mb-4">
   <i class="fas fa-arrow-up"></i>
 </button> -->
@@ -577,5 +584,100 @@
     </div>
   </footer>
 </div>
-
 <router-outlet></router-outlet>
+
+
+                  <!-- <div class="col-lg-4 col-md-12 ">
+                    <div class="card rounded border-0 card-hover shadow-lg bg-white text-dark" style="color: #f8f9fa">
+                      <img src="assets/img/logo.png" class="card-img-top img-fluid w-100 rounded-circle border mt-2"
+                        style="max-width: 150px; margin: auto;" alt="Project 1">
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Seva Gudi</h5>
+                        <p class="card-text text_font">
+                          Service Provider system to find and book nearby services, built with Angular & Capacitor,
+                          using REST API and SQL Server for data management.
+                          <br>
+                        </p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover ">
+                      <img src="assets\img\logo 512.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 130px; margin: auto;" alt="Project 2">
+          
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">KOT(Kitchen Order Ticket)</h5>
+                        <p class="card-text text_font">Restaurant Management System – A system where waiters can take orders
+                          and submit them to the kitchen, developed using AngularJS with Capacitor, and data managed via
+                          API using SQL Server.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                      <img src="assets\img\icon 512.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 100px; margin: auto;" alt="Project 3">
+          
+                     
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Paddy Management </h5>
+                        <p class="card-text text_font">Paddy Sale and Purchase System – Facilitates the sale and purchase of paddy
+                          with report generation for accurate measurement and detailed information. Implemented using
+                          the .NET Framework and MS Access database.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                      </div>
+                    </div>
+                  </div> -->
+          
+ <!-- <div class="carousel-item">
+                <div class="row m-4">
+                  <div class="col-lg-4 col-md-12">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                      <img src="assets\img\landing3.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 200px; margin: auto;" alt="Project 4">
+          
+                     
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Insta Messanger</h5>
+                        <p class="card-text text_font">Sale and Purchase of Paddy system with report generation that ensures
+                          accurate measurement and detailed information. Developed using .NET Framework with MS Access
+                          database.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                     
+                      <img src="assets\img\icons 521.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 150px; margin: auto;" alt="Project 5">
+          
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Product Tracking System </h5>
+                        <p class="card-text text_font">Product tracking using QR scanning and Google Maps integration in AGM. A
+                          hybrid app supporting Android, iOS, and Web platforms. REST APIs handled using the Core HTTP
+                          package.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card bg-white shadow-lg border-0 card-hover">
+                    
+                      <img src="assets\img\icon-72x72.png" class="card-img-top img-fluid w-100 mt-2 rounded-circle border"
+                        style="max-width: 150px; margin: auto;" alt="Project 6">
+          
+                      <div class="card-body">
+                        <h5 class="card-title gradient-heading">Chhattisgarh Aushdhi Darpan</h5>
+                        <p class="card-text text_font">
+                          A government dashboard project showcasing detailed reports on Drugs, Equipment, and
+                          Infrastructure, streamlining operations and enhancing efficiency.
+                        </p> <a href="#" class="btn btn-primary">View Project</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
